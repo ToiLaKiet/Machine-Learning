@@ -13,7 +13,7 @@ class LinearRegression():
         predicts = (np.dot(data, self.w) + self.b).reshape(-1,1)
         label = label.reshape(-1,1)
         errors = (predicts - label).T 
-        gradients = 2 *  np.dot(errors, data)
+        gradients = np.dot(errors, data)
         return [np.array(gradients) / data.shape[0], np.sum(errors) / data.shape[0]]
     def mse_loss(self,predictions,truth):
         predictions = np.array(predictions).flatten()
