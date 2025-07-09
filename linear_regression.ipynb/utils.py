@@ -9,7 +9,7 @@ def calculate_gradients(self, data, label):  # self param is the Linear Regressi
     predicts = (np.dot(data, self.w) + self.b).reshape(-1,1)
     label = label.reshape(-1,1)
     errors = (predicts - label).T 
-    gradients = np.dot(errors, data)
+    gradients = 2 *  np.dot(errors, data)
     print(gradients.shape,gradients)
     return [ np.array(gradients) / data.shape[0], np.sum(errors) / data.shape[0] ]
 
@@ -21,16 +21,18 @@ class LinearRegression():
         x = x.to_numpy()
         y = y.to_numpy()
         # Initialization
-        self.w = (np.ones(x.shape[1])).reshape(-1,1)
+        self.w = np.random.randn(x.shape[1],1)*0.01
         self.b = 1
         for i in range(epochs):
-            gradients = calculate_gradients(self,x,y)
-            self.w -= eta * (gradients[0]).T
-            self.b -= eta * gradients[1]
+            dw,db = calculate_gradients(self,x,y)
+            self.w -= eta * dw.T
+            self.b -= eta * db
             gradients = []
     def predict(self,x):
         x = x.reshape(-1,1)
         return np.dot(x.T, self.w)  + self.b
 #--Evaluation Functions--
 def calculate_mae(x,y):
+    x = np.array(x).flatten()
+    y = np.array(y).flatten()
     return np.mean(np.abs(x-y))
