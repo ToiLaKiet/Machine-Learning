@@ -2,6 +2,7 @@
 This repo is a collection of my self-coded ML models.
 # Models
 - **Linear Regression**: A simple implementation of linear regression from scratch.
+- **Logistic Regression**: A basic logistic regression model built from the ground up.
 # Contributing
 If you would like to contribute to this repository, feel free to fork it and submit a pull request. Any contributions are welcome!
 # References
