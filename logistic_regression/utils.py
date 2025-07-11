@@ -13,7 +13,7 @@ class LogisticRegression():
         predictions = np.dot(x,self.w) + self.b
         e_term = (np.e)**(-predictions)
         return 1 / (1 + e_term)
-    def calculate_gradients(self, data, label):  # self param is the Linear Regression model
+    def calculate_gradients(self, data, label): 
         predicts = self.predict(data)
         label = label.reshape(-1,1)
         errors = (predicts - label).T 
