@@ -36,7 +36,7 @@ class LogisticRegression():
             self.b -= eta * db
             predictions = self.predict(x)
             if i % 100 == 0:
-                print('Training MLE Log Loss: ', self.mle_log_loss(predictions,y))
+                print('Training MLE Log Loss, Epoch ',i, ': ', self.mle_log_loss(predictions,y))
             elif i == epochs - 1:
                 print('Final training MLE Log Loss: ', self.mle_log_loss(predictions,y))
             del dw,db

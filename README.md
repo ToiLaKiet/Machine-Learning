@@ -1,5 +1,6 @@
 # Machine-Learning
-This repo is a collection of my self-coded ML models.
+This repo is a collection of my self-coded ML models. I want to do this to deeply understand both intuitive and mathematical aspects of Machine Learning algorithms. The code is written in Python and is designed to be educational, focusing on clarity and simplicity rather than performance or scalability. 
+Thus, I am open to any suggestions or improvements to the code.
 # Models
 - **Linear Regression**: A simple implementation of linear regression from scratch.
 - **Logistic Regression**: A basic logistic regression model built from the ground up.
