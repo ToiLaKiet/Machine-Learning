@@ -1,7 +1,7 @@
 # Introduction
 This directory contains the code for a logistic regression model. The model is trained on a dataset and evaluated for its performance.
 # Directory Structure
-`utils.py`: Contains utility functions for data preprocessing and the Logistic Regression class.
+`utils.py`: Contains utility functions for data preprocessing and the Logistic Regression class.<br>
 `main.ipynb`: Jupyter Notebook that demonstrates how to use the Logistic Regression class to fit a model and make predictions.
 # Requirements
 I built this model from scratch using Python. The code does not require any external libraries, only some libraries like NumPy and Pandas for data manipulation.
