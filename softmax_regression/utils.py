@@ -14,11 +14,12 @@ class DenseLayer():
         self.activation = activation
     def forward_prop(self,data):
         if self.activation != "relu":
-            z = np.dot(data,self.w) + self.b
+            z = np.dot(data, self.w) + self.b
         else:
-            z = reLU(np.dot(data,self.w) + self.b)
+            z = reLU(np.dot(data, self.w) + self.b)
         return z
     def calculate_gradient(self):
+        
         pass
 # Softmax Regression Functions
 class SoftmaxRegression():
@@ -26,6 +27,11 @@ class SoftmaxRegression():
         self.relu_layer = DenseLayer(in_dim=64, out_dim=25, activation="relu")
         self.linear_layer = DenseLayer(in_dim=25, out_dim=10, activation="linear")
     def predict(self,data): 
+        '''
+        data : an input picture 
+        ---
+        return a list of propability that the input could be of that class
+        '''
         data = [ data ] * self.relu_layer.w
         a_1 = self.relu_layer.forward_prop(data)
         a_2 = softmax(self.linear_layer.forward_prop(a_1))
